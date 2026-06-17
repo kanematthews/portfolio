@@ -823,3 +823,22 @@ a.fx-contact__btn:hover{ border-color: var(--f-cyan); background: rgba(94,234,25
 @media (prefers-reduced-motion: reduce){
   .fx-section--holo, .fx-section--holo::before{ animation: none !important; opacity: 1 !important; }
 }
+
+.fx-milestone__node.is-locked{ animation: fx-node-lock 0.6s ease-out; }
+.fx-milestone__node.is-locked::after{
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1px solid var(--f-cyan);
+  animation: fx-ping 0.9s ease-out;
+}
+@keyframes fx-node-lock{
+  0%{ box-shadow: 0 0 0 rgba(94,234,255,0.7); }
+  50%{ box-shadow: 0 0 22px rgba(94,234,255,0.9); }
+  100%{ box-shadow: 0 0 12px rgba(94,234,255,0.7); }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .fx-milestone__node.is-locked, .fx-milestone__node.is-locked::after{ animation: none !important; }
+}
