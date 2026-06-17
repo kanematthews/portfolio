@@ -505,6 +505,26 @@ function initTimelinePings() {
   obs.observe(timeline);
 }
 
+function initContactLockOn() {
+  const contact = document.querySelector('.fx-contact');
+  if (!contact) return;
+
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    contact.classList.add('is-locked');
+    return;
+  }
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        contact.classList.add('is-locked');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  obs.observe(contact);
+}
+
 /* ---------------- theme toggle ---------------- */
 
 function syncToggleLabels(theme) {
@@ -552,6 +572,7 @@ function initMainSite() {
   initGlitch();
   initStats();
   initTimelinePings();
+  initContactLockOn();
   if (!reduceMotion) initTilt();
 }
 

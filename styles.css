@@ -868,3 +868,22 @@ a.fx-contact__btn:hover{ border-color: var(--f-cyan); background: rgba(94,234,25
     filter: none !important;
   }
 }
+
+.fx-contact.is-locked .fx-contact__radar::after{
+  animation: fx-radar-sweep 0.5s linear 1, fx-radar-sweep 4s linear infinite 0.5s;
+}
+.fx-contact.is-locked .fx-contact__btn{
+  animation: fx-contact-flash 0.5s ease-out backwards;
+}
+.fx-contact.is-locked .fx-contact__btn:nth-child(1){ animation-delay: 0.1s; }
+.fx-contact.is-locked .fx-contact__btn:nth-child(2){ animation-delay: 0.25s; }
+.fx-contact.is-locked .fx-contact__btn:nth-child(3){ animation-delay: 0.4s; }
+@keyframes fx-contact-flash{
+  0%{ box-shadow: 0 0 0 rgba(94,234,255,0); border-color: rgba(255,255,255,0.12); }
+  40%{ box-shadow: 0 0 24px rgba(94,234,255,0.6); border-color: var(--f-cyan); }
+  100%{ box-shadow: 0 0 0 rgba(94,234,255,0); border-color: rgba(255,255,255,0.12); }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .fx-contact.is-locked .fx-contact__btn{ animation: none !important; }
+}
