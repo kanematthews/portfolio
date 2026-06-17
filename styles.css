@@ -685,3 +685,27 @@ a.fx-contact__btn:hover{ border-color: var(--f-cyan); background: rgba(94,234,25
   .fx-hologram__scan, .fx-hologram__glyph{ animation: none !important; }
   .boot{ transition: none !important; }
 }
+
+/* ======================================================
+   FUTURE THEME — ENHANCED: space overhaul
+   ====================================================== */
+
+.fx-nebula{
+  position: fixed;
+  inset: -10% -10%;
+  z-index: -3;
+  background: url('assets/nebula-backdrop.png') center center / cover no-repeat;
+  mix-blend-mode: screen;
+  opacity: 0.55;
+  pointer-events: none;
+  will-change: transform;
+  transition: transform 0.1s linear;
+}
+
+@media (max-width: 760px){
+  .fx-nebula{ opacity: 0.3; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .fx-nebula{ transition: none !important; }
+}

@@ -284,6 +284,28 @@ function initParticles(canvas) {
   requestAnimationFrame(draw);
 }
 
+function initParallax() {
+  const nebula = document.querySelector('.fx-nebula');
+  const particles = document.querySelector('.fx-particles');
+  if (!nebula && !particles) return;
+
+  let ticking = false;
+  function apply() {
+    if (currentTheme() === 'future' && !reduceMotion) {
+      const y = window.scrollY;
+      if (nebula) nebula.style.transform = `translateY(${(y * 0.12).toFixed(1)}px)`;
+      if (particles) particles.style.transform = `translateY(${(y * 0.05).toFixed(1)}px)`;
+    }
+    ticking = false;
+  }
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(apply);
+    }
+  }, { passive: true });
+}
+
 /* ---------------- scroll reveals + skill bars ---------------- */
 
 function initReveals() {
@@ -493,6 +515,7 @@ function initMainSite() {
   initThemeToggle();
   initReveals();
   initCursorGlow();
+  initParallax();
   initCodetape();
   initScramble();
   initGlitch();
