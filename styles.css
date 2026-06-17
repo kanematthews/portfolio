@@ -758,3 +758,27 @@ a.fx-contact__btn:hover{ border-color: var(--f-cyan); background: rgba(94,234,25
 @media (prefers-reduced-motion: reduce){
   .fx-planet, .fx-rocket{ animation: none !important; display: none; }
 }
+
+.fx-warp{
+  position: fixed;
+  inset: 0;
+  z-index: 998;
+  pointer-events: none;
+  opacity: 0;
+  background: repeating-conic-gradient(from 0deg, rgba(94,234,255,0.0) 0deg 2deg, rgba(94,234,255,0.5) 2.2deg 2.4deg);
+  transform: scale(0.3);
+  transition: none;
+}
+.fx-warp.is-warping{
+  opacity: 1;
+  animation: fx-warp-burst 0.7s ease-out forwards;
+}
+@keyframes fx-warp-burst{
+  0%{ opacity: 0.9; transform: scale(0.3); }
+  70%{ opacity: 0.6; transform: scale(2.2); }
+  100%{ opacity: 0; transform: scale(3.2); }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .fx-warp{ display: none !important; }
+}

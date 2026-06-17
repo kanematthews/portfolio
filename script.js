@@ -95,6 +95,14 @@ function enterSite(theme) {
   document.body.classList.remove('gate-active');
   if (gate) gate.classList.add('is-leaving');
 
+  if (theme === 'future' && !reduceMotion) {
+    const warp = document.querySelector('.fx-warp');
+    if (warp) {
+      warp.classList.add('is-warping');
+      setTimeout(() => warp.classList.remove('is-warping'), 700);
+    }
+  }
+
   setTimeout(() => {
     if (gate) gate.style.display = 'none';
     initMainSite();
