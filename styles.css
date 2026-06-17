@@ -842,3 +842,29 @@ a.fx-contact__btn:hover{ border-color: var(--f-cyan); background: rgba(94,234,25
 @media (prefers-reduced-motion: reduce){
   .fx-milestone__node.is-locked, .fx-milestone__node.is-locked::after{ animation: none !important; }
 }
+
+.fx-grid.reveal .fx-card{
+  opacity: 0;
+  transform: translateY(24px) scale(0.94);
+  filter: blur(4px);
+  transition: opacity 0.5s ease, transform 0.5s ease, filter 0.5s ease;
+}
+.fx-grid.reveal.is-in .fx-card{
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+.fx-grid .fx-card:nth-child(1){ transition-delay: 0s; }
+.fx-grid .fx-card:nth-child(2){ transition-delay: 0.12s; }
+.fx-grid .fx-card:nth-child(3){ transition-delay: 0.24s; }
+.fx-grid .fx-card:nth-child(4){ transition-delay: 0.36s; }
+
+@media (prefers-reduced-motion: reduce){
+  .fx-grid.reveal .fx-card{
+    transition: none !important;
+    transition-delay: 0s !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
