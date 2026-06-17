@@ -545,6 +545,11 @@ function initThemeToggle() {
       document.documentElement.dataset.theme = next;
       try { localStorage.setItem('theme', next); } catch (e) { /* ignore */ }
       syncToggleLabels(next);
+
+      if (!reduceMotion) {
+        btn.classList.add('is-pulsing');
+        setTimeout(() => btn.classList.remove('is-pulsing'), 500);
+      }
     });
   });
 }
