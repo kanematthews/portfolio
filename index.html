@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cli">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kane Matthews — Software Developer &amp; Data Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=VT323&family=Orbitron:wght@600;700;800&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="gate-active">
+
+<div id="bootGate" class="boot">
+  <div class="boot__inner">
+    <pre class="boot__log" id="bootLog" aria-live="polite"></pre>
+    <p class="boot__prompt">
+      <span class="boot__user">kane@portfolio</span> <span class="boot__path">~</span> <span class="boot__sigil">%</span>
+      <input id="bootInput" class="boot__input" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Type cli or future to choose an interface, then press enter" disabled />
+    </p>
+    <p class="boot__hint" id="bootHint">type <b>cli</b> or <b>future</b>, then press enter</p>
+  </div>
+</div>
+
+<div class="crt cli-only" aria-hidden="true"></div>
+<canvas id="rainGlobal" class="rain cli-only" aria-hidden="true"></canvas>
+<div class="codetape cli-only" aria-hidden="true"><div class="codetape__track" id="codetapeTrack"></div></div>
+
+<canvas id="starsGlobal" class="fx-stars future-only" aria-hidden="true"></canvas>
+<div class="fx-mesh future-only" aria-hidden="true"><span></span><span></span><span></span></div>
+<div class="fx-cursor-glow future-only" aria-hidden="true"></div>
+
+<header class="termbar cli-only">
+  <div class="termbar__dots"><span class="dot dot--red"></span><span class="dot dot--amber"></span><span class="dot dot--green"></span></div>
+  <p class="termbar__title">kane@portfolio: ~</p>
+  <nav class="termbar__nav">
+    <a href="#about">~/about</a>
+    <a href="#log">~/log</a>
+    <a href="#projects">~/projects</a>
+    <a href="#contact">~/contact</a>
+    <button class="theme-toggle" type="button" aria-pressed="false">
+      <span class="theme-toggle__thumb" aria-hidden="true"></span>
+      <span class="theme-toggle__label">FUTURE MODE</span>
+    </button>
+  </nav>
+</header>
+
+<header class="fx-nav future-only">
+  <p class="fx-nav__mark">K · M</p>
+  <nav class="fx-nav__links">
+    <a href="#about">About</a>
+    <a href="#log">Timeline</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Channel</a>
+    <button class="theme-toggle" type="button" aria-pressed="false">
+      <span class="theme-toggle__thumb" aria-hidden="true"></span>
+      <span class="theme-toggle__label">CLI MODE</span>
+    </button>
+  </nav>
+</header>
+
+<main>
+
+  <section id="hero" class="block block--hero">
+
+    <div class="cli-only block--hero__cli">
+      <div class="block__inner block--hero__inner">
+
+        <p class="prompt">
+          <span class="prompt__user">kane@portfolio</span> <span class="prompt__path">~</span> <span class="prompt__sigil">%</span>
+          <span class="prompt__cmd" data-type="whoami"></span><span class="cursor cursor--typing"></span>
+        </p>
+
+        <div class="hero__output">
+          <h1 class="hero__name glitch">KANE MATTHEWS</h1>
+          <p class="hero__role">Software Developer &amp; Data Engineer</p>
+          <p class="hero__loc">Hastings, East Sussex, UK</p>
+          <p class="hero__bio">
+            &gt; Computer Science graduate building internal tools, automating<br>
+            &gt; business processes, and working with large datasets.
+          </p>
+        </div>
+
+        <div class="hero__figure-wrap">
+          <svg class="hero__figure" viewBox="0 0 420 460" role="img" aria-label="Wireframe diagram of a person made of connected nodes, annotated with input, process, and output labels">
+            <g class="figure__draw">
+              <circle cx="210" cy="100" r="44" />
+              <line x1="210" y1="144" x2="210" y2="280" />
+              <line x1="210" y1="180" x2="120" y2="240" />
+              <line x1="210" y1="180" x2="300" y2="240" />
+              <line x1="210" y1="280" x2="150" y2="400" />
+              <line x1="210" y1="280" x2="270" y2="400" />
+              <circle cx="120" cy="240" r="7" />
+              <circle cx="300" cy="240" r="7" />
+              <circle cx="150" cy="400" r="7" />
+              <circle cx="270" cy="400" r="7" />
+              <circle cx="210" cy="180" r="7" />
+              <circle cx="210" cy="280" r="7" />
+            </g>
+            <g class="figure__leaders">
+              <path d="M215,75 H320 V64" />
+              <path d="M300,240 H340 V231" />
+              <path d="M180,122 H90 V128" />
+            </g>
+          </svg>
+
+          <p class="callout callout--input"><span class="callout__tag">// in</span> messy ONIX feeds &amp; spreadsheets</p>
+          <p class="callout callout--process"><span class="callout__tag">// proc</span> C#, PowerShell, automation</p>
+          <p class="callout callout--output"><span class="callout__tag">// out</span> tools the team runs on daily</p>
+        </div>
+
+        <p class="prompt prompt--next">
+          <span class="prompt__user">kane@portfolio</span> <span class="prompt__path">~</span> <span class="prompt__sigil">%</span>
+          <span class="cursor"></span>
+        </p>
+      </div>
+    </div>
+
+    <div class="future-only block--hero__future">
+      <canvas class="fx-particles" aria-hidden="true"></canvas>
+      <svg class="fx-ufo" width="92" height="46" viewBox="0 0 92 46" aria-hidden="true">
+        <g class="fx-ufo__body">
+          <ellipse cx="46" cy="30" rx="40" ry="9" fill="rgba(94,234,255,0.12)" stroke="rgba(94,234,255,0.7)" stroke-width="1.5" />
+          <path d="M22,26 Q46,4 70,26" fill="rgba(255,95,224,0.08)" stroke="rgba(255,95,224,0.55)" stroke-width="1.5" />
+          <circle cx="32" cy="29" r="2.4" fill="#5EEAFF" />
+          <circle cx="46" cy="32" r="2.4" fill="#FF5FE0" />
+          <circle cx="60" cy="29" r="2.4" fill="#5EEAFF" />
+        </g>
+      </svg>
+      <div class="fx-hero__content">
+        <div class="fx-orbit" aria-hidden="true">
+          <span class="fx-globe">
+            <span class="fx-globe__ring"></span>
+            <span class="fx-globe__ring"></span>
+            <span class="fx-globe__ring"></span>
+          </span>
+          <span class="fx-orbit__ring fx-orbit__ring--1"></span>
+          <span class="fx-orbit__ring fx-orbit__ring--2"></span>
+          <span class="fx-orbit__ring fx-orbit__ring--3"><span class="fx-orbit__sat"></span></span>
+          <span class="fx-orbit__core">KM</span>
+        </div>
+        <p class="fx-eyebrow">Signal online</p>
+        <h1 class="fx-name">Kane Matthews</h1>
+        <p class="fx-role">Software Developer &amp; Data Engineer</p>
+        <p class="fx-tagline">Building the systems behind tomorrow's data — based in Hastings, East Sussex, UK.</p>
+        <div class="fx-wave" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+      <p class="fx-scrollcue" aria-hidden="true">scroll</p>
+    </div>
+
+  </section>
+
+  <section id="about" class="block">
+
+    <div class="cli-only">
+      <div class="block__inner">
+        <p class="prompt"><span class="prompt__user">kane@portfolio</span> <span class="prompt__path">~</span> <span class="prompt__sigil">%</span> <span class="scramble" data-text="cat about.txt">cat about.txt</span></p>
+
+        <div class="config">
+          <div class="config__row"><span class="config__key">ROLE</span><span class="config__eq">=</span><span class="config__val">"Data Services Officer @ Gardners Books"</span></div>
+          <div class="config__row"><span class="config__key">FOCUS</span><span class="config__eq">=</span><span class="config__val">"Data automation, internal tooling, ONIX metadata"</span></div>
+          <div class="config__row"><span class="config__key">STACK</span><span class="config__eq">=</span><span class="config__val">["C#", "PowerShell", "Python", "JavaScript", "XML"]</span></div>
+          <div class="config__row"><span class="config__key">EDUCATION</span><span class="config__eq">=</span><span class="config__val">"BSc (Hons) Computer Science — Portsmouth, 2023"</span></div>
+          <div class="config__row"><span class="config__key">BASED</span><span class="config__eq">=</span><span class="config__val">"Hastings, East Sussex, UK"</span></div>
+          <div class="config__row"><span class="config__key">STATUS</span><span class="config__eq">=</span><span class="config__val config__val--bool">open_to_work: true</span></div>
+        </div>
+
+        <p class="comment">
+          # Outside of work I maintain a large personal Unity/C# project —<br>
+          # practical experience in software architecture, OOP, and<br>
+          # maintaining a complex system independently.
+        </p>
+      </div>
+    </div>
+
+    <div class="future-only fx-section">
+      <p class="fx-kicker">01 / Profile</p>
+      <h2 class="fx-h2">About</h2>
+      <div class="fx-about reveal">
+        <div class="fx-about__bio">
+          <p class="fx-p">
+            Computer Science graduate building internal tools, automating business processes, and
+            working with large datasets. I develop C# and PowerShell solutions for ONIX metadata
+            processing, data quality, and operational efficiency — and outside of work I maintain a
+            large personal Unity/C# project.
+          </p>
+          <ul class="fx-badges">
+            <li>Hastings, East Sussex, UK</li>
+            <li>BSc (Hons) Computer Science — Portsmouth, 2023</li>
+            <li class="fx-badges__status">Open to work</li>
+          </ul>
+        </div>
+        <div class="fx-skills">
+          <div class="fx-skill" data-level="90"><span class="fx-skill__label">C#</span><span class="fx-skill__bar"><span class="fx-skill__fill"></span></span></div>
+          <div class="fx-skill" data-level="85"><span class="fx-skill__label">PowerShell</span><span class="fx-skill__bar"><span class="fx-skill__fill"></span></span></div>
+          <div class="fx-skill" data-level="65"><span class="fx-skill__label">Python</span><span class="fx-skill__bar"><span class="fx-skill__fill"></span></span></div>
+          <div class="fx-skill" data-level="60"><span class="fx-skill__label">JavaScript</span><span class="fx-skill__bar"><span class="fx-skill__fill"></span></span></div>
+          <div class="fx-skill" data-level="80"><span class="fx-skill__label">XML / ONIX</span><span class="fx-skill__bar"><span class="fx-skill__fill"></span></span></div>
+        </div>
+        <div class="fx-hologram" aria-hidden="true">
+          <div class="fx-hologram__scan"></div>
+          <p class="fx-hologram__glyph">KM</p>
+          <p class="fx-hologram__caption">live feed — profile.km</p>
+        </div>
+      </div>
+      <div class="fx-stats reveal">
+        <div class="fx-stat"><span class="fx-stat__num" data-target="4">0</span><span class="fx-stat__label">Projects shipped</span></div>
+        <div class="fx-stat"><span class="fx-stat__num" data-target="3">0</span><span class="fx-stat__label">Years coding</span></div>
+        <div class="fx-stat"><span class="fx-stat__num" data-target="5">0</span><span class="fx-stat__label">Languages &amp; tools</span></div>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="log" class="block block--alt">
+
+    <div class="cli-only">
+      <div class="block__inner">
+        <p class="prompt"><span class="prompt__user">kane@portfolio</span> <span class="prompt__path">~</span> <span class="prompt__sigil">%</span> <span class="scramble" data-text="tail -f experience.log">tail -f experience.log</span></p>
+
+        <div class="log">
+          <div class="log__entry">
+            <p class="log__head">
+              <span class="log__time">[2024-08]</span>
+              <span class="log__level log__level--info">INFO</span>
+              Data Services Officer @ Gardners Books <span class="log__loc">(Eastbourne)</span>
+            </p>
+            <ul class="log__lines">
+              <li>build &amp; maintain internal C#/PowerShell apps used daily across the Data Services team</li>
+              <li>shipped a spreadsheet → ONIX XML converter, removing a manual rekeying bottleneck</li>
+              <li>built reconciliation tooling for invoice/product pricing discrepancies</li>
+              <li>validate &amp; troubleshoot large ONIX XML metadata feeds from publishers</li>
+              <li>collaborate cross-functionally to scope &amp; deliver technical solutions</li>
+            </ul>
+          </div>
+
+          <div class="log__entry">
+            <p class="log__head">
+              <span class="log__time">[2023-07]</span>
+              <span class="log__level log__level--pass">PASS</span>
+              BSc (Hons) Computer Science <span class="log__loc">— University of Portsmouth</span>
+            </p>
+            <ul class="log__lines">
+              <li>software engineering, OOP, databases, data structures &amp; algorithms</li>
+              <li>web development, systems analysis, testing, agile methods, networking, HCI</li>
+            </ul>
+          </div>
+
+          <div class="log__entry">
+            <p class="log__head">
+              <span class="log__time">[2022-02]</span>
+              <span class="log__level log__level--info">INFO</span>
+              Customer Team Member @ Co-op Food Group
+            </p>
+            <ul class="log__lines">
+              <li>customer service in a fast-paced retail environment</li>
+              <li>maintained accuracy under pressure handling transactions &amp; queries</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="future-only fx-section">
+      <p class="fx-kicker">02 / Timeline</p>
+      <h2 class="fx-h2">Trajectory</h2>
+      <div class="fx-timeline reveal">
+        <div class="fx-timeline__line" aria-hidden="true"></div>
+
+        <div class="fx-milestone">
+          <span class="fx-milestone__node"></span>
+          <p class="fx-milestone__date">2024 — Present</p>
+          <h3 class="fx-milestone__title">Data Services Officer, Gardners Books</h3>
+          <ul class="fx-milestone__list">
+            <li>Build &amp; maintain internal C#/PowerShell apps used daily across the team</li>
+            <li>Shipped a spreadsheet → ONIX XML converter, removing a manual rekeying bottleneck</li>
+            <li>Built reconciliation tooling for invoice/product pricing discrepancies</li>
+          </ul>
+        </div>
+
+        <div class="fx-milestone">
+          <span class="fx-milestone__node"></span>
+          <p class="fx-milestone__date">2023</p>
+          <h3 class="fx-milestone__title">BSc (Hons) Computer Science, Portsmouth</h3>
+          <ul class="fx-milestone__list">
+            <li>Software engineering, OOP, databases, algorithms, agile methods, HCI</li>
+          </ul>
+        </div>
+
+        <div class="fx-milestone">
+          <span class="fx-milestone__node"></span>
+          <p class="fx-milestone__date">2022 — 2023</p>
+          <h3 class="fx-milestone__title">Customer Team Member, Co-op Food Group</h3>
+          <ul class="fx-milestone__list">
+            <li>Customer service in a fast-paced retail environment</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="projects" class="block">
+
+    <div class="cli-only">
+      <div class="block__inner">
+        <p class="prompt"><span class="prompt__user">kane@portfolio</span> <span class="prompt__path">~</span> <span class="prompt__sigil">%</span> <span class="scramble" data-text="ls -la ~/projects">ls -la ~/projects</span></p>
+
+        <div class="dirlist">
+
+          <article class="entry">
+            <p class="entry__row"><span class="entry__perm">drwxr-xr-x</span><span class="entry__name scramble" data-text="onix-converter/">onix-converter/</span></p>
+            <p class="entry__desc">C# tool that converts customer spreadsheet data into valid ONIX XML — removed a manual rekeying bottleneck for the Data Services team.</p>
+            <ul class="entry__tags"><li>C#</li><li>ONIX/XML</li><li>Automation</li></ul>
+            <p class="entry__status"># status: shipped — in daily use</p>
+          </article>
+
+          <article class="entry">
+            <p class="entry__row"><span class="entry__perm">drwxr-xr-x</span><span class="entry__name scramble" data-text="reconciliation-tool/">reconciliation-tool/</span></p>
+            <p class="entry__desc">PowerShell tooling that cross-references historical invoice and product records to explain pricing discrepancies.</p>
+            <ul class="entry__tags"><li>PowerShell</li><li>Data validation</li><li>Support tooling</li></ul>
+            <p class="entry__status"># status: shipped — used by support team</p>
+          </article>
+
+          <article class="entry">
+            <p class="entry__row"><span class="entry__perm">drwxr-xr-x</span><span class="entry__name scramble" data-text="unity-game-project/">unity-game-project/</span></p>
+            <p class="entry__desc">Large-scale solo Unity/C# project — interconnected NPC dialogue, inventory &amp; equipment, character progression, UI, and data persistence systems.</p>
+            <ul class="entry__tags"><li>Unity</li><li>C#</li><li>Architecture</li></ul>
+            <p class="entry__status"># status: ongoing — 2023–present</p>
+          </article>
+
+          <article class="entry">
+            <p class="entry__row"><span class="entry__perm">drwxr-xr-x</span><span class="entry__name scramble" data-text="uni-discord-bot/">uni-discord-bot/</span></p>
+            <p class="entry__desc">Discord bot built for the university community — API integration, event-driven programming, post-deployment bug fixes &amp; feature updates.</p>
+            <ul class="entry__tags"><li>Discord API</li><li>Event-driven</li><li>Bot</li></ul>
+            <p class="entry__status"># status: shipped — 2022–2023</p>
+          </article>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="future-only fx-section">
+      <p class="fx-kicker">03 / Modules</p>
+      <h2 class="fx-h2">Projects</h2>
+      <div class="fx-grid reveal">
+
+        <article class="fx-card">
+          <span class="fx-card__glow" aria-hidden="true"></span>
+          <div class="fx-card__body">
+            <p class="fx-card__tag">Internal tool</p>
+            <h3 class="fx-card__title">ONIX Converter</h3>
+            <p class="fx-card__desc">Converts customer spreadsheet data into valid ONIX XML, removing a manual rekeying bottleneck.</p>
+            <ul class="fx-card__pills"><li>C#</li><li>ONIX/XML</li><li>Automation</li></ul>
+            <p class="fx-card__status">Shipped — in daily use</p>
+          </div>
+        </article>
+
+        <article class="fx-card">
+          <span class="fx-card__glow" aria-hidden="true"></span>
+          <div class="fx-card__body">
+            <p class="fx-card__tag">Internal tool</p>
+            <h3 class="fx-card__title">Reconciliation Tool</h3>
+            <p class="fx-card__desc">Cross-references historical invoice and product records to explain pricing discrepancies.</p>
+            <ul class="fx-card__pills"><li>PowerShell</li><li>Data validation</li></ul>
+            <p class="fx-card__status">Shipped — used by support team</p>
+          </div>
+        </article>
+
+        <article class="fx-card">
+          <span class="fx-card__glow" aria-hidden="true"></span>
+          <div class="fx-card__body">
+            <p class="fx-card__tag">Personal project</p>
+            <h3 class="fx-card__title">Unity Game Project</h3>
+            <p class="fx-card__desc">Solo Unity/C# project — NPC dialogue, inventory, character progression, UI, and data persistence.</p>
+            <ul class="fx-card__pills"><li>Unity</li><li>C#</li><li>Architecture</li></ul>
+            <p class="fx-card__status">Ongoing — 2023–present</p>
+          </div>
+        </article>
+
+        <article class="fx-card">
+          <span class="fx-card__glow" aria-hidden="true"></span>
+          <div class="fx-card__body">
+            <p class="fx-card__tag">Personal project</p>
+            <h3 class="fx-card__title">University Discord Bot</h3>
+            <p class="fx-card__desc">Discord bot for the university community — API integration, event-driven programming.</p>
+            <ul class="fx-card__pills"><li>Discord API</li><li>Bot</li></ul>
+            <p class="fx-card__status">Shipped — 2022–2023</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+  </section>
+
+  <section id="contact" class="block block--alt block--contact">
+
+    <div class="cli-only">
+      <div class="block__inner">
+        <p class="prompt"><span class="prompt__user">kane@portfolio</span> <span class="prompt__path">~</span> <span class="prompt__sigil">%</span> <span class="scramble" data-text="cat contact.txt">cat contact.txt</span></p>
+
+        <div class="config">
+          <a class="config__row config__row--link" href="mailto:mrkanematthews@gmail.com"><span class="config__key">EMAIL</span><span class="config__eq">=</span><span class="config__val">mrkanematthews@gmail.com</span></a>
+          <a class="config__row config__row--link" href="tel:+447367889547"><span class="config__key">PHONE</span><span class="config__eq">=</span><span class="config__val">07367 889547</span></a>
+          <div class="config__row"><span class="config__key">LOCATION</span><span class="config__eq">=</span><span class="config__val">Hastings, East Sussex, UK</span></div>
+        </div>
+
+        <p class="prompt prompt--next">
+          <span class="prompt__user">kane@portfolio</span> <span class="prompt__path">~</span> <span class="prompt__sigil">%</span>
+          <span class="cursor"></span>
+        </p>
+      </div>
+    </div>
+
+    <div class="future-only fx-section fx-contact">
+      <div class="fx-contact__radar" aria-hidden="true"></div>
+      <p class="fx-kicker">04 / Channel</p>
+      <h2 class="fx-h2">Open a channel</h2>
+      <div class="fx-contact__grid reveal">
+        <a class="fx-contact__btn" href="mailto:mrkanematthews@gmail.com"><span class="fx-contact__ping"></span>Email — mrkanematthews@gmail.com</a>
+        <a class="fx-contact__btn" href="tel:+447367889547"><span class="fx-contact__ping"></span>Phone — 07367 889547</a>
+        <div class="fx-contact__btn fx-contact__btn--static"><span class="fx-contact__ping"></span>Location — Hastings, East Sussex, UK</div>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+<footer class="termfooter cli-only">[ session ended — exit code 0 ] · rev A · 2026</footer>
+<footer class="fx-footer future-only">Transmission complete · Kane Matthews · 2026</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

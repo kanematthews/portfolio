@@ -1,0 +1,64 @@
+KANE MATTHEWS
+mrkanematthews@gmail.com 07367 889547 Hastings, East Sussex
+Profile
+Computer Science graduate with professional experience building internal software tools, automating business
+processes, and working with large datasets. Currently at Gardners Books as a Data Services Officer, developing
+C# and PowerShell solutions for ONIX metadata processing, data quality, and operational efficiency. Alongside
+day-to-day work, I maintain a substantial personal Unity/C# project and enjoy solving problems through code.
+Seeking opportunities in software development, data engineering, technical analysis, or application support.
+Professional Experience
+Data Services Officer, Gardners Books
+•Develop and maintain internal C# and PowerShell applications used daily across the
+Data Services team.
+•Built a tool that converts customer spreadsheet data into valid ONIX XML, removing a
+manual rekeying bottleneck for the team.
+08/2024 – Present
+Eastbourne
+•Created data reconciliation tooling that cross-references historical invoice and product
+records to explain pricing discrepancies — now used by the support team to resolve
+customer queries faster.
+•Process, validate, and troubleshoot large ONIX XML metadata feeds from publishers
+and industry partners, investigating root causes of data quality issues.
+•Collaborate with multiple departments to gather requirements and deliver technical
+solutions to business problems.
+•Contribute to ongoing improvements in data quality, workflow efficiency, and
+documentation.
+•Technologies: C#, PowerShell, XML/ONIX, Microsoft Excel, Git
+Customer Team Member, Co-op Food Group
+•Delivered customer service in a fast-paced retail environment, developing
+communication and problem-solving skills.
+•Maintained accuracy under pressure while handling transactions and customer
+queries.
+02/2022 – 02/2023
+Education
+BSc (Hons) Computer Science, University of Portsmouth
+Covered software engineering, OOP, databases, data structures & algorithms, web
+development, systems analysis, software testing, agile methodologies, networking, and
+HCI. Completed multiple practical development projects throughout.
+07/2023
+Technical Skills
+Programming & Data
+C#, PowerShell, Python, JavaScript, HTML/CSS XML,
+ONIX Metadata, Data Processing & Validation
+Workflow Automation, Microsoft Excel, Git
+Platforms & Practices
+Unity, React, Object-Oriented Programming Software
+Testing & Debugging Agile Development, Technical
+Documentation
+Additional
+•Full right to work in the United Kingdom.
+•Experienced working remotely and independently.
+•Comfortable picking up unfamiliar technologies and systems quickly.
+Personal Projects
+Unity Game Project, Ongoing
+A large-scale solo project in Unity/C# involving interconnected gameplay systems —
+including NPC dialogue, inventory and equipment, character progression, UI
+frameworks, and data persistence. The codebase has grown significantly over time and
+serves as practical experience in software architecture, OOP, refactoring, and
+maintaining a complex system independently. Unity, C#, Git, ScriptableObjects, Eventdriven Architecture
+2023 – Present
+University Discord Bot
+Designed and built a Discord bot for use within the university community. Involved API
+integration, event-driven programming, and post-deployment support including bug
+fixes and feature updates based on user feedback.
+2022 – 2023
