@@ -709,3 +709,52 @@ a.fx-contact__btn:hover{ border-color: var(--f-cyan); background: rgba(94,234,25
 @media (prefers-reduced-motion: reduce){
   .fx-nebula{ transition: none !important; }
 }
+
+.fx-planet, .fx-rocket{
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.fx-planet{
+  top: 60%;
+  left: -8%;
+  width: 90px;
+  height: 90px;
+  opacity: 0.5;
+  background-image: url('assets/planet-silhouette.png');
+  animation: fx-planet-drift 46s linear infinite;
+}
+
+.fx-rocket{
+  top: 8%;
+  left: -6%;
+  width: 70px;
+  height: 70px;
+  opacity: 0.6;
+  background-image: url('assets/rocket-silhouette.png');
+  animation: fx-rocket-drift 33s linear infinite;
+  animation-delay: 9s;
+}
+
+@keyframes fx-planet-drift{
+  0%{ transform: translate(0, 0) rotate(0deg); }
+  100%{ transform: translate(125vw, -8vh) rotate(8deg); }
+}
+
+@keyframes fx-rocket-drift{
+  0%{ transform: translate(0, 0) rotate(-20deg); }
+  100%{ transform: translate(120vw, 18vh) rotate(-20deg); }
+}
+
+@media (max-width: 760px){
+  .fx-planet, .fx-rocket{ display: none; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .fx-planet, .fx-rocket{ animation: none !important; display: none; }
+}
