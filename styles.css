@@ -914,3 +914,31 @@ a.fx-contact__btn:hover{ border-color: var(--f-cyan); background: rgba(94,234,25
   .fx-nav__links a::after{ transition: none !important; }
   .theme-toggle.is-pulsing{ animation: none !important; }
 }
+
+.fx-milestone__node{ transition: box-shadow 0.2s ease; cursor: default; }
+.fx-milestone__node:hover{ box-shadow: 0 0 16px rgba(94,234,255,0.8); }
+.fx-milestone__node:hover::before{
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 4px;
+  width: 22px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--f-cyan), transparent);
+}
+
+.fx-contact__btn{ transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; }
+a.fx-contact__btn:hover{ transform: translateY(-3px); box-shadow: 0 10px 24px rgba(94,234,255,0.18); }
+
+.fx-scrollcue{ animation: fx-bob 2s ease-in-out infinite, fx-cue-pulse 2s ease-in-out infinite; }
+@keyframes fx-cue-pulse{
+  0%, 100%{ opacity: 0.6; text-shadow: none; }
+  50%{ opacity: 1; text-shadow: 0 0 8px rgba(94,234,255,0.6); }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .fx-milestone__node{ transition: none !important; }
+  .fx-contact__btn{ transition: none !important; }
+  a.fx-contact__btn:hover{ transform: none !important; }
+  .fx-scrollcue{ animation: none !important; }
+}
