@@ -173,7 +173,7 @@ function initRain(canvas) {
 
 function initStars(canvas) {
   const ctx = canvas.getContext('2d');
-  let width, height, stars, comet;
+  let width, height, stars, comet, orbiters;
 
   function size() {
     const rect = canvas.getBoundingClientRect();
@@ -185,15 +185,26 @@ function initStars(canvas) {
       y: Math.random() * height,
       r: Math.random() * 1.4 + 0.3,
       phase: Math.random() * Math.PI * 2,
-      speed: 0.01 + Math.random() * 0.02
+      speed: 0.01 + Math.random() * 0.02,
+      vx: (Math.random() - 0.5) * 0.06,
+      vy: 0.02 + Math.random() * 0.05
     }));
     comet = null;
+    orbiters = new Array(3).fill(0).map((_, i) => ({
+      cx: width * (0.25 + i * 0.25),
+      cy: height * 0.4,
+      rx: width * (0.3 + i * 0.12),
+      ry: height * (0.22 + i * 0.08),
+      angle: Math.random() * Math.PI * 2,
+      speed: 0.00028 + i * 0.00006,
+      r: 1.6 + i * 0.3
+    }));
   }
   size();
   window.addEventListener('resize', size);
 
   function maybeSpawnComet() {
-    if (!comet && Math.random() < 0.004) {
+    if (!comet && Math.random() < 0.009) {
       const fromLeft = Math.random() < 0.5;
       comet = {
         x: fromLeft ? -20 : width + 20,
@@ -211,10 +222,27 @@ function initStars(canvas) {
     ctx.fillStyle = '#F2F0FF';
     stars.forEach(s => {
       s.phase += s.speed;
+      s.x += s.vx;
+      s.y += s.vy;
+      if (s.x < -2) s.x = width + 2;
+      if (s.x > width + 2) s.x = -2;
+      if (s.y > height + 2) s.y = -2;
       const tw = 0.4 + Math.abs(Math.sin(s.phase)) * 0.6;
       ctx.globalAlpha = tw;
       ctx.beginPath();
       ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      ctx.fill();
+    });
+    ctx.globalAlpha = 1;
+
+    ctx.fillStyle = '#5EEAFF';
+    orbiters.forEach(o => {
+      o.angle += o.speed;
+      const ox = o.cx + Math.cos(o.angle) * o.rx;
+      const oy = o.cy + Math.sin(o.angle) * o.ry;
+      ctx.globalAlpha = 0.55 + Math.sin(o.angle * 2) * 0.2;
+      ctx.beginPath();
+      ctx.arc(ox, oy, o.r, 0, Math.PI * 2);
       ctx.fill();
     });
     ctx.globalAlpha = 1;
