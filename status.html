@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cli">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kane Matthews — Status</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=VT323&family=Orbitron:wght@600;700;800&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="gate-active">
+
+<div id="bootGate" class="boot">
+  <div class="boot__inner">
+    <pre class="boot__log" id="bootLog" aria-live="polite"></pre>
+    <p class="boot__prompt">
+      <span class="boot__user">kane@portfolio</span> <span class="boot__path">~</span> <span class="boot__sigil">%</span>
+      <input id="bootInput" class="boot__input" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Type cli or future to choose an interface, then press enter" disabled />
+    </p>
+    <p class="boot__hint" id="bootHint">type <b>cli</b> or <b>future</b>, then press enter</p>
+  </div>
+</div>
+
+<div class="fx-warp future-only" aria-hidden="true"></div>
+
+<div class="crt cli-only" aria-hidden="true"></div>
+<canvas id="rainGlobal" class="rain cli-only" aria-hidden="true"></canvas>
+<div class="codetape cli-only" aria-hidden="true"><div class="codetape__track" id="codetapeTrack"></div></div>
+
+<canvas id="starsGlobal" class="fx-stars future-only" aria-hidden="true"></canvas>
+<div class="fx-mesh future-only" aria-hidden="true"><span></span><span></span><span></span></div>
+<div class="fx-nebula future-only" aria-hidden="true"></div>
+<div class="fx-scrim future-only" aria-hidden="true"></div>
+<div class="fx-cursor-glow future-only" aria-hidden="true"></div>
+
+<header class="termbar cli-only">
+  <div class="termbar__dots"><span class="dot dot--red"></span><span class="dot dot--amber"></span><span class="dot dot--green"></span></div>
+  <p class="termbar__title">kane@portfolio: ~/status</p>
+  <nav class="termbar__nav">
+    <a href="index.html">~</a>
+    <a href="index.html#about">~/about</a>
+    <a href="index.html#log">~/log</a>
+    <a href="index.html#projects">~/projects</a>
+    <a href="index.html#contact">~/contact</a>
+    <button class="theme-toggle" type="button" aria-pressed="false">
+      <span class="theme-toggle__thumb" aria-hidden="true"></span>
+      <span class="theme-toggle__label">FUTURE MODE</span>
+    </button>
+  </nav>
+</header>
+
+<header class="fx-nav future-only">
+  <p class="fx-nav__mark">K · M</p>
+  <nav class="fx-nav__links">
+    <a href="index.html">Home</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#log">Timeline</a>
+    <a href="index.html#projects">Projects</a>
+    <a href="index.html#contact">Channel</a>
+    <button class="theme-toggle" type="button" aria-pressed="false">
+      <span class="theme-toggle__thumb" aria-hidden="true"></span>
+      <span class="theme-toggle__label">CLI MODE</span>
+    </button>
+  </nav>
+</header>
+
+<main>
+
+  <section id="status-board" class="block">
+
+    <div class="cli-only">
+      <div class="block__inner">
+        <p class="prompt"><span class="prompt__user">kane@portfolio</span> <span class="prompt__path">~</span> <span class="prompt__sigil">%</span> <span class="scramble" data-text="status --watch">status --watch</span></p>
+      </div>
+    </div>
+
+    <div class="future-only fx-section">
+      <p class="fx-kicker">05 / Status</p>
+      <h2 class="fx-h2">Live Board</h2>
+    </div>
+
+    <div class="status-board">
+      <div class="status-board__tabs" id="statusTabs"></div>
+      <p class="status-board__updated" id="statusUpdated"></p>
+      <p class="status-board__error" id="statusError" hidden></p>
+      <div class="status-board__columns" id="statusColumns"></div>
+    </div>
+
+  </section>
+
+</main>
+
+<footer class="termfooter cli-only">[ session ended — exit code 0 ] · rev A · 2026</footer>
+<footer class="fx-footer future-only">Transmission complete · Kane Matthews · 2026</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
