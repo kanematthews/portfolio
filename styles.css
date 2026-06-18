@@ -886,6 +886,7 @@ a.fx-contact__btn:hover{ border-color: var(--f-cyan); background: rgba(94,234,25
 
 @media (prefers-reduced-motion: reduce){
   .fx-contact.is-locked .fx-contact__btn{ animation: none !important; }
+  .fx-contact.is-locked .fx-contact__radar::after{ animation: none !important; }
 }
 
 .fx-nav__links a{ position: relative; }
