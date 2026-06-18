@@ -1,0 +1,43 @@
+.status-board{ max-width: 1100px; margin: 0 auto; }
+.status-board__tabs{ display: flex; gap: 10px; margin: 0 0 16px; flex-wrap: wrap; }
+.status-tab{
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.status-board__updated{ font-size: 11px; margin: 0 0 14px; }
+.status-board__error{ font-size: 12px; margin: 0 0 14px; }
+.status-board__columns{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(220px, 1fr);
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+.status-column{ padding: 14px; border-radius: 10px; }
+.status-column__title{ font-size: 13px; margin: 0 0 10px; }
+.status-card{ font-size: 13px; margin: 0 0 8px; padding: 8px 10px; border-radius: 6px; }
+.status-loading{ font-size: 13px; }
+
+:root[data-theme="cli"] .status-tab{ color: var(--green-dim); border: 1px solid var(--green-faint); }
+:root[data-theme="cli"] .status-tab.is-active{ color: var(--green); border-color: var(--green); box-shadow: var(--glow); }
+:root[data-theme="cli"] .status-board__updated{ color: var(--green-faint); }
+:root[data-theme="cli"] .status-board__error{ color: var(--red); }
+:root[data-theme="cli"] .status-column{ border: 1px solid var(--green-faint); background: rgba(10,15,12,0.6); }
+:root[data-theme="cli"] .status-column__title{ color: var(--amber); }
+:root[data-theme="cli"] .status-card{ color: var(--white); border: 1px solid var(--green-faint); }
+:root[data-theme="cli"] .status-loading{ color: var(--green-dim); }
+
+:root[data-theme="future"] .status-tab{ color: var(--f-dim); border: 1px solid rgba(94,234,255,0.3); }
+:root[data-theme="future"] .status-tab.is-active{ color: var(--f-cyan); border-color: var(--f-cyan); box-shadow: 0 0 10px rgba(94,234,255,0.5); }
+:root[data-theme="future"] .status-board__updated{ color: var(--f-dim); }
+:root[data-theme="future"] .status-board__error{ color: var(--f-magenta); }
+:root[data-theme="future"] .status-column{ border: 1px solid rgba(255,255,255,0.12); background: linear-gradient(160deg, rgba(20,18,35,0.9), rgba(10,8,20,0.95)); }
+:root[data-theme="future"] .status-column__title{ color: var(--f-white); font-family: var(--f-font-display); }
+:root[data-theme="future"] .status-card{ color: var(--f-dim); border: 1px solid rgba(255,255,255,0.1); }
+:root[data-theme="future"] .status-loading{ color: var(--f-dim); }
