@@ -739,8 +739,9 @@ a.fx-contact__btn:hover{ border-color: var(--f-cyan); background: rgba(94,234,25
   width: 104px;
   height: 104px;
   opacity: 0.85;
+  filter: brightness(1.8) contrast(1.4);
   background-image: url('assets/rocket-silhouette.png');
-  animation: fx-rocket-journey 42s ease-in-out infinite;
+  animation: fx-rocket-journey 30s ease-in-out infinite;
   animation-delay: 4s;
 }
 
@@ -750,15 +751,15 @@ a.fx-contact__btn:hover{ border-color: var(--f-cyan); background: rgba(94,234,25
 }
 
 @keyframes fx-rocket-journey{
-  0%{ transform: translate(-10vw, -15vh) rotate(-35deg) scale(0.85); opacity: 0; filter: brightness(1.8) contrast(1.4) drop-shadow(0 0 6px rgba(94,234,255,0.35)); }
+  0%{ transform: translate(-10vw, -15vh) rotate(-35deg) scale(0.85); opacity: 0; }
   8%{ opacity: 1; }
-  30%{ transform: translate(28vw, 22vh) rotate(-10deg) scale(1); }
+  30%{ transform: translate(26vw, 20vh) rotate(-10deg) scale(1); }
   44%{ transform: translate(40vw, 46vh) rotate(0deg) scale(1); }
-  48%{ transform: translate(40vw, 48vh) rotate(0deg) scale(0.95); filter: brightness(1.8) contrast(1.4) drop-shadow(0 0 6px rgba(94,234,255,0.35)); }
-  66%{ transform: translate(40vw, 48vh) rotate(0deg) scale(0.95); filter: brightness(1.8) contrast(1.4) drop-shadow(0 0 6px rgba(94,234,255,0.35)); }
-  70%{ transform: translate(40vw, 45vh) rotate(1deg) scale(1.02); filter: brightness(1.8) contrast(1.4) drop-shadow(0 0 24px rgba(94,234,255,0.9)); }
-  86%{ transform: translate(55vw, -25vh) rotate(16deg) scale(1); opacity: 1; filter: brightness(1.8) contrast(1.4) drop-shadow(0 0 16px rgba(94,234,255,0.6)); }
-  100%{ transform: translate(72vw, -75vh) rotate(26deg) scale(0.88); opacity: 0; filter: brightness(1.8) contrast(1.4) drop-shadow(0 0 4px rgba(94,234,255,0.2)); }
+  48%{ transform: translate(40vw, 48vh) rotate(0deg) scale(0.95); }
+  62%{ transform: translate(40vw, 48vh) rotate(0deg) scale(0.95); }
+  68%{ transform: translate(40vw, 45vh) rotate(1deg) scale(1.03); }
+  86%{ transform: translate(56vw, -25vh) rotate(16deg) scale(1); opacity: 1; }
+  100%{ transform: translate(72vw, -75vh) rotate(26deg) scale(0.88); opacity: 0; }
 }
 
 @media (max-width: 760px){
