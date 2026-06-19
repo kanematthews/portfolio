@@ -3,7 +3,7 @@ const { chromium } = require('playwright');
 (async () => {
   const browser = await chromium.launch();
   const page = await browser.newPage({ viewport: { width: 1280, height: 800 } });
-  await page.goto('file:///C:/Users/cool_/Desktop/Portfolio/index.html');
+  await page.goto('file:///D:/Portfolio/index.html');
   await page.waitForTimeout(1700);
   await page.fill('#bootInput', 'future');
   await page.press('#bootInput', 'Enter');

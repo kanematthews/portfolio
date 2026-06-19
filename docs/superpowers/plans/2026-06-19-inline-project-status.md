@@ -122,14 +122,14 @@ EOF
 - Modify: `tests/smoke-helpers.js`
 
 **Interfaces:**
-- Produces: `openCliMode(page, url = 'file:///C:/Users/cool_/Desktop/Portfolio/index.html')` — async function, dismisses the boot gate into CLI theme. Used by Task 3's `project-status-render.smoke.js`.
+- Produces: `openCliMode(page, url = 'file:///D:/Portfolio/index.html')` — async function, dismisses the boot gate into CLI theme. Used by Task 3's `project-status-render.smoke.js`.
 
 - [ ] **Step 1: Add the `openCliMode` helper**
 
 `tests/smoke-helpers.js` currently reads:
 
 ```js
-async function openFutureMode(page, url = 'file:///C:/Users/cool_/Desktop/Portfolio/index.html') {
+async function openFutureMode(page, url = 'file:///D:/Portfolio/index.html') {
   await page.goto(url);
   await page.waitForTimeout(1700);
   await page.fill('#bootInput', 'future');
@@ -143,7 +143,7 @@ module.exports = { openFutureMode };
 Change it to:
 
 ```js
-async function openFutureMode(page, url = 'file:///C:/Users/cool_/Desktop/Portfolio/index.html') {
+async function openFutureMode(page, url = 'file:///D:/Portfolio/index.html') {
   await page.goto(url);
   await page.waitForTimeout(1700);
   await page.fill('#bootInput', 'future');
@@ -151,7 +151,7 @@ async function openFutureMode(page, url = 'file:///C:/Users/cool_/Desktop/Portfo
   await page.waitForTimeout(1200);
 }
 
-async function openCliMode(page, url = 'file:///C:/Users/cool_/Desktop/Portfolio/index.html') {
+async function openCliMode(page, url = 'file:///D:/Portfolio/index.html') {
   await page.goto(url);
   await page.waitForTimeout(1700);
   await page.fill('#bootInput', 'cli');
@@ -173,7 +173,7 @@ const { openCliMode } = require('./tests/smoke-helpers');
 (async () => {
   const browser = await chromium.launch();
   const page = await browser.newPage();
-  await openCliMode(page, 'file:///C:/Users/cool_/Desktop/Portfolio/index.html');
+  await openCliMode(page, 'file:///D:/Portfolio/index.html');
   const theme = await page.evaluate(() => document.documentElement.dataset.theme);
   console.log(theme === 'cli' ? 'PASS: cli mode active' : 'FAIL: theme is ' + theme);
   await browser.close();
