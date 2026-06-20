@@ -367,6 +367,24 @@ ul{ margin: 0; padding: 0; list-style: none; }
 }
 .entry__status{ margin: 0; font-size: 12px; color: var(--amber); opacity: 0.85; }
 
+/* ---------- project status (live trello mini-board) ---------- */
+.project-status{ margin-top: 12px; }
+.project-status__columns{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(180px, 1fr);
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+.status-column{ padding: 12px; border-radius: 10px; }
+.status-column__title{ font-size: 12px; margin: 0 0 8px; }
+.status-card{ font-size: 12px; margin: 0 0 6px; padding: 6px 8px; border-radius: 6px; }
+
+:root[data-theme="cli"] .status-column{ border: 1px solid var(--green-faint); background: rgba(10,15,12,0.6); }
+:root[data-theme="cli"] .status-column__title{ color: var(--amber); }
+:root[data-theme="cli"] .status-card{ color: var(--white); border: 1px solid var(--green-faint); }
+
 /* ---------- footer ---------- */
 .termfooter{
   background: var(--bg-alt);
@@ -611,6 +629,10 @@ ul{ margin: 0; padding: 0; list-style: none; }
 .fx-card__pills{ display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 14px; }
 .fx-card__pills li{ font-size: 10px; padding: 4px 9px; border: 1px solid rgba(255,255,255,0.15); border-radius: 999px; color: var(--f-dim); }
 .fx-card__status{ font-family: var(--f-font-body); font-size: 11px; color: var(--f-cyan); margin: 0; }
+
+:root[data-theme="future"] .status-column{ border: 1px solid rgba(255,255,255,0.12); background: linear-gradient(160deg, rgba(20,18,35,0.9), rgba(10,8,20,0.95)); }
+:root[data-theme="future"] .status-column__title{ color: var(--f-white); font-family: var(--f-font-display); }
+:root[data-theme="future"] .status-card{ color: var(--f-dim); border: 1px solid rgba(255,255,255,0.1); }
 
 /* contact */
 .fx-contact{ position: relative; overflow: hidden; }
